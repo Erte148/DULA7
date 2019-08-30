@@ -303,7 +303,7 @@ function node.render()
         
         end
     
-  if count !=0 then   
+  if count ~=0 then   
     gl.clear(0,0,0,1)
     font2:write(30, 10, "Motion Detected", 100, .5,.5,.5,1)
     countStr = tostring(num)
