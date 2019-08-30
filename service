@@ -1,0 +1,21 @@
+#!/usr/bin/python2.7
+from hosted import device, node, config
+config.restart_on_update()
+
+counter = 0
+
+ 
+device.gpio.monitor(config.pin18)
+device.gpio.monitor(config.pin17)
+device.gpio.monitor(config.pin27)
+device.gpio.monitor(config.pin23)
+device.gpio.monitor(config.pin25)
+for (pin, state) in device.gpio.poll_forever():
+ 
+ if state is True:        
+        node.send('/counter:%d' % pin)
+ else:    
+        node.send('/counter:%d' % counter)
+
+            
+
