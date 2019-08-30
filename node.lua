@@ -1,6 +1,6 @@
 gl.setup(1920, 1080)
 
-util.noglobals()
+--util.noglobals()
 
 -- We need to access files in playlist/
 node.make_nested()
