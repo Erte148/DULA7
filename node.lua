@@ -9,10 +9,22 @@ node.make_nested()
 -- they are displayed.
 local PREPARE_TIME = 1 -- seconds
 
+
+
 -- must be enough time to load a video and have it
 -- ready in the paused state. Normally 500ms should
 -- be enough.
 local VIDEO_PRELOAD_TIME = .5 -- seconds
+
+local font2 = resource.load_font "font2.ttf"
+local count = 0
+local num=0
+
+util.data_mapper{
+    counter = function(counter)
+        count = tonumber(counter)
+    end,
+}
 
 local json = require "json"
 local font = resource.load_font "silkscreen.ttf"
@@ -267,7 +279,22 @@ util.file_watch("playlist/config.json", function(raw)
 end)
 
 function node.render()
+  if count==18 then  num=count
+  elseif count==17 then  num=count
+  elseif count==27 then  num=count  
+  elseif count==23 then  num=count
+  elseif count==25 then  num=count      
+ else num=0
+        end
+     
     gl.clear(0,0,0,1)
-    playlist.tick(os.time())
-    -- screen.draw(test)
+    font2:write(30, 10, "Motion Detected", 100, .5,.5,.5,1)
+    countStr = tostring(num)
+    font2:write(250, 300, countStr, 64, 1,1,1,1)
 end
+
+--function node.render()
+  --  gl.clear(0,0,0,1)
+  --  playlist.tick(os.time())
+    -- screen.draw(test)
+--end
