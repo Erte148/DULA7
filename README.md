@@ -1,6 +1,7 @@
 [![Import](https://cdn.infobeamer.com/s/img/import.png)](https://info-beamer.com/use?url=https://github.com/info-beamer/package-patchwork-player)
 
-A video/image wall with freely arranged screens
+
+Custom Interactive Player with multi GPIO based on "A video/image wall with freely arranged screens"
 ===============================================
 
 This package allows you to play videos (or images) inside a virtual
