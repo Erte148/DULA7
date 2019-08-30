@@ -1,6 +1,17 @@
 gl.setup(1920, 1080)
 
---util.noglobals()
+local font2 = resource.load_font "font2.ttf"
+local count = 0
+local num=0
+
+util.data_mapper{
+    counter = function(counter)
+        count = tonumber(counter)
+    end,
+}
+
+
+util.noglobals()
 
 -- We need to access files in playlist/
 node.make_nested()
