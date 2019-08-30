@@ -296,7 +296,11 @@ function node.render()
   elseif count==27 then  num=count  
   elseif count==23 then  num=count
   elseif count==25 then  num=count      
- else num=0
+ else 
+        gl.clear(0,0,0,1)
+        playlist.tick(os.time())
+    -- screen.draw(test)
+        
         end
      
     gl.clear(0,0,0,1)
