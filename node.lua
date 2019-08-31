@@ -376,7 +376,8 @@ local function Playlist()
         set = set;
         tick = tick;
         tickq = tickq;	
-	 tickqw = tickqw;	
+	 tickqw = tickqw;
+	stop_all=stop_all;	
     }
 end
 
