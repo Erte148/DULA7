@@ -441,6 +441,8 @@ playlist.tickq(os.time())
   end 
 	
 if count==18 then
+playlist3.set(prepare_playlist(1))
+node.gc()
 gl.clear(0,0,0,1)		
 playlist3.tickqw(os.time())
   end
@@ -449,8 +451,13 @@ if count==27 then
 --playlist2.tickq(os.time())
   end		
   if count==23 then
+
+playlist3.set(prepare_playlist(2))
+node.gc()
 gl.clear(0,0,0,1)		
-playlist2.tickq(os.time())
+playlist3.tickqw(os.time())		
+ node.gc()		
+--playlist2.tickq(os.time())
 --gl.clear(0,0,0,1)		
     --font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
    --countStr = tostring(count)
