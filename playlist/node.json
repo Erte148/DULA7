@@ -2,7 +2,7 @@
     "name": "Playlist Configuration",
     "options": [
     {
-        "title": "What to display",
+        "title": "Контент типа заставки, протекает по всем экранам",
         "type": "section"
     }, {
         "title": "Playlist",
@@ -25,8 +25,32 @@
             "default": 5
         }]
     },
+    {
+        "title": "Контент типа заставки (нейтральный)",
+        "type": "section"
+    }, {
+        "title": "Playlist",
+        "name": "playlist_n",
+        "type": "list",
+        "itemname": "Item",
+        "items": [{
+            "title": "Asset",
+            "ui_width": 5,
+            "name": "file",
+            "type": "resource",
+            "valid": ["image", "video"],
+            "default": "empty.png"
+        }, {
+            "title": "Play time",
+            "ui_width": 3,
+            "name": "duration",
+            "type": "duration",
+            "hint": "How long should this item be displayed on screen. For videos, use their duration",
+            "default": 5
+        }]
+    },
      {
-        "title": "Контент про девайс №2",
+        "title": "Контент про девайсы №1,2",
         "type": "section"
     }, {
         "title": "Playlist",
@@ -49,5 +73,77 @@
             "default": 5
         }]
     },
+     {
+        "title": "Контент про девайс №3",
+        "type": "section"
+    }, {
+        "title": "Playlist",
+        "name": "playlist3",
+        "type": "list",
+        "itemname": "Item",
+        "items": [{
+            "title": "Asset",
+            "ui_width": 5,
+            "name": "file",
+            "type": "resource",
+            "valid": ["image", "video"],
+            "default": "empty.png"
+        }, {
+            "title": "Play time",
+            "ui_width": 3,
+            "name": "duration",
+            "type": "duration",
+            "hint": "How long should this item be displayed on screen. For videos, use their duration",
+            "default": 5
+        }]
+    },
+     {
+        "title": "Контент про девайс №4",
+        "type": "section"
+    }, {
+        "title": "Playlist",
+        "name": "playlist4",
+        "type": "list",
+        "itemname": "Item",
+        "items": [{
+            "title": "Asset",
+            "ui_width": 5,
+            "name": "file",
+            "type": "resource",
+            "valid": ["image", "video"],
+            "default": "empty.png"
+        }, {
+            "title": "Play time",
+            "ui_width": 3,
+            "name": "duration",
+            "type": "duration",
+            "hint": "How long should this item be displayed on screen. For videos, use their duration",
+            "default": 5
+        }]
+    },
+     {
+        "title": "Контент про девайсы №5,6",
+        "type": "section"
+    }, {
+        "title": "Playlist",
+        "name": "playlist56",
+        "type": "list",
+        "itemname": "Item",
+        "items": [{
+            "title": "Asset",
+            "ui_width": 5,
+            "name": "file",
+            "type": "resource",
+            "valid": ["image", "video"],
+            "default": "empty.png"
+        }, {
+            "title": "Play time",
+            "ui_width": 3,
+            "name": "duration",
+            "type": "duration",
+            "hint": "How long should this item be displayed on screen. For videos, use their duration",
+            "default": 5
+        }]
+    }   
     ]
 }
