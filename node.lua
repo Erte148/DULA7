@@ -499,7 +499,7 @@ gl.clear(0,0,0,1)
 		
 		
    font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
-  countStr = tostring(screen_rot)
+  countStr = tostring(screen.rotation)
    font2:write(250, 300, countStr, 64, 1,1,1,1)		
   end
 if count==25 then
