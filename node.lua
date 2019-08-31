@@ -21,7 +21,7 @@ local video2 = resource.load_video{
 	
 	
     }
-video2:rotate(180)
+
 
 local video3 = resource.load_video{
     file = "Blue.mp4";
