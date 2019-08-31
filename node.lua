@@ -376,9 +376,10 @@ function node.render()
     
   if count ~=0 then   
     gl.clear(0,0,0,1)
-    font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
-    countStr = tostring(num)
-    font2:write(250, 300, countStr, 64, 1,1,1,1)
+	playlist2.tickq(os.time())	
+    --font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
+   -- countStr = tostring(num)
+    --font2:write(250, 300, countStr, 64, 1,1,1,1)
    end 
     
 end
