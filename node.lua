@@ -495,11 +495,11 @@ if count==27 then
   end		
   if count==23 then
 gl.clear(0,0,0,1)		
-gl.rotate(-180, 0, 0, 1)
-gl.translate(-1920, -1080)		
+--gl.rotate(-180, 0, 0, 1)
+--gl.translate(-1920, -1080)		
 video2:stop()
 video3:start()		
-video3:draw(0, 0, 900, 600)
+video3:draw(0, 0, WIDTH, HEIGHT) --тут менять можно масштаб
 		
 		
   -- font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
