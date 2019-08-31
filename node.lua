@@ -362,14 +362,12 @@ end)
 
 function node.render()
  if count==0 then  
-gl.clear(0,0,0,1)
-playlist2.stop(os.time())		
+gl.clear(0,0,0,1)		
 playlist.tickq(os.time())
   end 
 	
 if count==18 then
-gl.clear(0,0,0,1)
-playlist.stop(os.time())		
+gl.clear(0,0,0,1)		
 playlist2.tickq(os.time())
   end
 if count==27 then
