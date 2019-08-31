@@ -13,7 +13,7 @@ util.data_mapper{
 
 
 local video2 = resource.load_video{
-    file = "Rose.mp4";
+    file = "Gold.mp4";
     looped = true;
     }
 local video3 = resource.load_video{
