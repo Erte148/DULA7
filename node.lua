@@ -465,7 +465,7 @@ playlist.tick(os.time())
 if count==18 then
 --playlist:stop()
 gl.clear(0,0,0,1)
-gl.rotate (-180, 960, 500, 0)		
+gl.rotate (180, 960, 500, 0)		
 video3:stop()	
 video2:start()
 video2:draw(0, 0, WIDTH, HEIGHT)
