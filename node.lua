@@ -463,7 +463,8 @@ if count==27 then
   if count==23 then
 --playlist:stop()		
 video2:stop()
-video3:start()		
+video3:start()
+gl.rotate(180, 0, 0, 1)		
 video3:draw(0, 0, WIDTH, HEIGHT)
 		
 --playlist2.tickq(os.time())
