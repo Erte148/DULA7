@@ -297,6 +297,7 @@ end
 
 local playlist = Playlist()
 local playlist2 = Playlist()
+local playlist3 = Playlist()
 
 local function prepare_playlist(playlist)
     if #playlist >= 2 then
@@ -360,6 +361,26 @@ util.file_watch("playlist/config.json", function(raw)
     node.gc()
 end)
 
+
+util.file_watch("playlist/config.json", function(raw)
+    local config = json.decode(raw)
+    local items = {}
+    for idx = 1, #config.playlist3 do
+            --idx = idp
+        local item = config.playlist3[idx]
+        items[#items+1] = {
+            file = resource.open_file('playlist/' .. item.file.asset_name),
+            type = item.file.type,
+            duration = item.duration,
+        }
+       
+    end
+    playlist3.set(prepare_playlist(items))
+    node.gc()
+end)
+
+
+
 function node.render()
  if count==0 then  
 gl.clear(0,0,0,1)		
@@ -375,8 +396,8 @@ if count==27 then
 --playlist2.tickq(os.time())
   end		
   if count==23 then
---gl.clear(0,0,0,1)		
---playlist2.tickq(os.time())
+gl.clear(0,0,0,1)		
+playlist3.tickq(os.time())
   end
 if count==25 then
 --gl.clear(0,0,0,1)		
@@ -384,12 +405,12 @@ if count==25 then
   end		
   
     
-  if count ==23 then   
-    gl.clear(0,0,0,1)		
-    font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
-    countStr = tostring(num)
-    font2:write(250, 300, countStr, 64, 1,1,1,1)
-   end 
+  --if count ==23 then   
+   -- gl.clear(0,0,0,1)		
+   -- font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
+   -- countStr = tostring(num)
+   -- font2:write(250, 300, countStr, 64, 1,1,1,1)
+ --  end 
     
 end
 
