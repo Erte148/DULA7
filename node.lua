@@ -442,7 +442,7 @@ playlist.tickq(os.time())
 	
 if count==18 then
 gl.clear(0,0,0,1)		
-playlist2.tickq(os.time())
+playlist3.tickqw(os.time())
   end
 if count==27 then
 --gl.clear(0,0,0,1)		
