@@ -441,7 +441,10 @@ playlist.tickq(os.time())
   end 
 	
 if count==18 then
-		
+
+
+    local config = json.decode("playlist/config.json")
+    local items = {}		
 local item = config.playlist3[1]
 items[#items+1] = {
 file = resource.open_file('playlist/' .. item.file.asset_name),
