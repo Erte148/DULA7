@@ -30,19 +30,20 @@ audio=true;
    }
 
 
---local video3 = resource.load_video{
---    file = "Blue.mp4";
---    looped = true;
---	paused = true;
-  --  }
+local video3 = resource.load_video{
+   file = "Blue.mp4";
+    looped = true;
+    paused = true;
+    audio=true;	
+   }
 
-local video3 =util.videoplayer(
-	"Blue.mp4",
-{
-loop=true,
-paused=true		
- }
-)
+--local video3 =util.videoplayer(
+--	"Blue.mp4",
+--{
+--loop=true,
+--paused=true		
+-- }
+--)
 
 
 -- We need to access files in playlist/
@@ -495,14 +496,14 @@ if count==27 then
   if count==23 then
 gl.clear(0,0,0,1)		
 		
---video2:stop()
---video3:start()		
---video3:draw(0, 0, WIDTH, HEIGHT)
+video2:stop()
+video3:start()		
+video3:draw(0, 0, WIDTH, HEIGHT)
 		
 		
-   font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
-  countStr = tostring(screen.rotation)
-   font2:write(250, 300, countStr, 64, 1,1,1,1)		
+  -- font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
+  --countStr = tostring(screen.rotation)
+  -- font2:write(250, 300, countStr, 64, 1,1,1,1)		
   end
 if count==25 then
 --gl.clear(0,0,0,1)		
