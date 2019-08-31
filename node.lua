@@ -18,7 +18,7 @@ local video2 = resource.load_video{
     file = "Gold.mp4";
     looped = true;
     paused = true;
-	raw=true;
+	
 	
     }
 video2:rotate(180)
