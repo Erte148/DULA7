@@ -446,14 +446,14 @@ end)
 function node.render()
  if count==0 then  
 gl.clear(0,0,0,1)
-playlist:start()			
+--playlist:start()			
 video2:stop()
 video3:stop()		
 playlist.tick(os.time())
   end 
 	
 if count==18 then
-playlist:stop()		
+--playlist:stop()		
 video3:stop()
 video2:start()
 video2:draw(0, 0, WIDTH, HEIGHT)
@@ -464,7 +464,7 @@ if count==27 then
 --playlist2.tickq(os.time())
   end		
   if count==23 then
-playlist:stop()		
+--playlist:stop()		
 video2:stop()
 video3:start()		
 video3:draw(0, 0, WIDTH, HEIGHT)
