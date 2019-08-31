@@ -496,7 +496,7 @@ if count==27 then
   if count==23 then
 gl.clear(0,0,0,1)		
 gl.rotate(-90, 0, 0, 1)
-gl.translate(-700, -500)		
+gl.translate(-1080, -500)		
 video2:stop()
 video3:start()		
 video3:draw(0, 0, WIDTH, HEIGHT)
