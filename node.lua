@@ -17,7 +17,7 @@ local video2 =util.videoplayer(
 {
 loop=true,
 paused=true
-audio=true;		
+audio=true		
  }
 )
 
