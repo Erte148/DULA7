@@ -34,7 +34,7 @@ paused=true
 --	paused = true;
   --  }
 
-local video32 =util.videoplayer(
+local video3 =util.videoplayer(
 	"Blue.mp4",
 {
 loop=true,
