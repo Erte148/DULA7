@@ -443,18 +443,12 @@ playlist3.tickqw(os.time())
 if count==18 then
 
 
-    local config = json.decode("playlist/config.json")
-    local items = {}		
-local item = config.playlist3[1]
-items[#items+1] = {
-file = resource.open_file('playlist/' .. item.file.asset_name),
-  type = item.file.type,
- duration = item.duration,
-  }		
- playlist3.set(prepare_playlist(items))
-node.gc()
-gl.clear(0,0,0,1)		
-playlist3.tickqw(os.time())
+local video2 = resource.load_video{
+    file = "playlist/Rose.mp4";
+    looped = true;
+    }
+video2:draw(0, 0, WIDTH, HEIGHT)
+ 
   end
 if count==27 then
 --gl.clear(0,0,0,1)		
