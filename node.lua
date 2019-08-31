@@ -441,7 +441,14 @@ playlist.tickq(os.time())
   end 
 	
 if count==18 then
-playlist3.set(1)
+		
+local item = config.playlist3[1]
+items[#items+1] = {
+file = resource.open_file('playlist/' .. item.file.asset_name),
+  type = item.file.type,
+ duration = item.duration,
+  }		
+ playlist3.set(prepare_playlist(items))
 node.gc()
 gl.clear(0,0,0,1)		
 playlist3.tickqw(os.time())
@@ -452,7 +459,13 @@ if count==27 then
   end		
   if count==23 then
 
-playlist3.set(2)
+local item = config.playlist3[2]
+items[#items+1] = {
+file = resource.open_file('playlist/' .. item.file.asset_name),
+  type = item.file.type,
+ duration = item.duration,
+  }		
+ playlist3.set(prepare_playlist(items))
 node.gc()
 gl.clear(0,0,0,1)		
 playlist3.tickqw(os.time())		
