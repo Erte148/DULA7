@@ -361,9 +361,12 @@ util.file_watch("playlist/config.json", function(raw)
 end)
 
 function node.render()
-  if count==18 then  playlist2.tickq(os.time())
+  if count==18 then  
+playlist2.tickq(os.time())
+  end
+		
        
-  elseif count==17 then  num=count
+  if count==17 then  num=count
   elseif count==27 then  num=count  
   elseif count==23 then  num=count
   elseif count==25 then  num=count      
@@ -374,12 +377,11 @@ function node.render()
         
         end
     
-  if count ~=0 then   
-    gl.clear(0,0,0,1)
-	playlist2.tickq(os.time())	
-    --font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
-   -- countStr = tostring(num)
-    --font2:write(250, 300, countStr, 64, 1,1,1,1)
+  if count ==23 then   
+    gl.clear(0,0,0,1)		
+    font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
+    countStr = tostring(num)
+    font2:write(250, 300, countStr, 64, 1,1,1,1)
    end 
     
 end
