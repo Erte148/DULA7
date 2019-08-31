@@ -1,5 +1,5 @@
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
-gl.rotate(1, 0, 0, 1)
+
 
 local font2 = resource.load_font "font2.ttf"
 local count = 0
@@ -454,6 +454,8 @@ end)
 function node.render()
  if count==0 then  
 gl.clear(0,0,0,1)
+gl.rotate (10, 0, 0, 0)		
+		
 --playlist:start()			
 video2:stop()
 video3:stop()		
