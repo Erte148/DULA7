@@ -16,7 +16,8 @@ local video2 =util.videoplayer(
 	"Gold.mp4",
 {
 loop=true,
-paused=true		
+paused=true
+audio=true;		
  }
 )
 
