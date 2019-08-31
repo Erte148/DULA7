@@ -475,21 +475,19 @@ gl.clear(0,0,0,1)
 --playlist:start()			
 video2:stop()
 video3:stop()
-local item2 = playlist[1]
- 		
-		
-playlist:set(item2)	
+	
 		
 playlist.tick(os.time())
   end 
 	
 if count==18 then
 playlist:stop_all()
+video3:stop()		
 gl.clear(0,0,0,1)
 --gl.rotate (180, 960, 500, 0)	
 --gl.rotate (-180, 0, 0, 1)
 --gl.translate(-screen_x, -screen_y)		
-video3:stop()	
+	
 video2:start()
 video2:draw(0, 0, WIDTH, HEIGHT)
  
@@ -500,10 +498,11 @@ if count==27 then
 --playlist2.tickq(os.time())
   end		
   if count==23 then
+video2:stop()		
+playlist:stop_all()		
 gl.clear(0,0,0,1)		
 --gl.rotate(-180, 0, 0, 1)
---gl.translate(-1920, -1080)		
-video2:stop()
+--gl.translate(-1920, -1080)
 video3:start()		
 video3:draw(0, 0, WIDTH, HEIGHT) --тут менять можно масштаб
 		
