@@ -68,11 +68,17 @@ local function Screen()
         --gl.translate(-screen_x, -screen_y)
         util.draw_correct(obj, 0, 0, NATIVE_WIDTH, NATIVE_HEIGHT)
     end
+	 local function drawqw(obj)
+        --gl.rotate(-screen_rot, 0, 0, 1)
+        --gl.translate(-screen_x, -screen_y)
+        util.draw_correct(obj, 0, 0, NATIVE_WIDTH, NATIVE_HEIGHT)
+    end
     
     return {
         update = update;
         draw = draw;
         drawq= drawq;
+	drawqw= drawqw;
     }
 end
 
@@ -93,6 +99,11 @@ local Image = {
         local state, w, h = self.obj:state()
         screen.drawq(self.obj)
     end;
+	tickqw = function(self, now)
+        local state, w, h = self.obj:state()
+        screen.drawqw(self.obj)
+    end;
+	
     stop = function(self)
         if self.obj then
             self.obj:dispose()
@@ -152,7 +163,22 @@ local Video = {
         
     
      end;
+	
+    tickqw = function(self, now)
+        if not self.obj then
+            self.obj = resource.load_video{
+                file = self.file:copy();
+                paused = true;
+		looped = true;		
+            }
+        end       
+
+        self.obj:start()
+        local state, w, h = self.obj:state()
+	screen.drawqw(self.obj)	 
+        
     
+     end;
     
     stop = function(self)
         if self.obj then
@@ -253,7 +279,33 @@ local function Playlist()
         end
     end
     
-    
+    local function tickqw(now)
+        local num_running = 0
+        local next_running = 99999999999999
+
+        
+
+       	for idx = 1, #items do
+            local item = items[idx]
+           
+                item.state = "running"
+          
+
+            
+
+            if item.state == "running" then
+                item:tickqw(now)
+                num_running = num_running + 1
+            end
+	end
+			
+        
+
+        if num_running == 0 then
+            local wait = next_running - now
+            msg("[%s] waiting for sync %.1f", serial, wait)
+        end
+    end
 
     local function stop_all()
         for idx = 1, #items do
@@ -292,6 +344,7 @@ local function Playlist()
         set = set;
         tick = tick;
         tickq = tickq;	
+	 tickqw = tickqw;	
     }
 end
 
@@ -397,7 +450,7 @@ if count==27 then
   end		
   if count==23 then
 gl.clear(0,0,0,1)		
-playlist3.tickq(os.time())
+playlist3.tickqw(os.time())
   end
 if count==25 then
 --gl.clear(0,0,0,1)		
