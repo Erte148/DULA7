@@ -26,7 +26,7 @@ local video2 = resource.load_video{
  file = "Gold.mp4";
   looped = true;
   paused = true;
-audio=true;	
+--audio=true;	
    }
 
 
@@ -34,7 +34,7 @@ local video3 = resource.load_video{
    file = "Blue.mp4";
     looped = true;
     paused = true;
-    audio=true;	
+   -- audio=true;	
    }
 
 --local video3 =util.videoplayer(
@@ -495,7 +495,8 @@ if count==27 then
   end		
   if count==23 then
 gl.clear(0,0,0,1)		
-		
+gl.rotate(-90, 0, 0, 1)
+gl.translate(-100, -100)		
 video2:stop()
 video3:start()		
 video3:draw(0, 0, WIDTH, HEIGHT)
