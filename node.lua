@@ -475,7 +475,9 @@ gl.clear(0,0,0,1)
 --playlist:start()			
 video2:stop()
 video3:stop()
-local item2 = config.playlist[2]		
+local item2 = playlist[1]
+ 		
+		
 playlist:set(item2)	
 		
 playlist.tick(os.time())
