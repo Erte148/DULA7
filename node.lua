@@ -478,7 +478,7 @@ playlist.tick(os.time())
   end 
 	
 if count==18 then
---playlist:stop()
+playlist:stop_all()
 gl.clear(0,0,0,1)
 --gl.rotate (180, 960, 500, 0)	
 --gl.rotate (-180, 0, 0, 1)
