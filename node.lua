@@ -11,16 +11,12 @@ util.data_mapper{
     end,
 }
 
+local video2 =util.videoplayer("Gold.mp4", [loop = true])
 
-local video2 = resource.load_video{
-    file = "Gold.mp4";
-    looped = true;
-    paused = false;
-    }
 local video3 = resource.load_video{
     file = "Blue.mp4";
     looped = true;
-	paused = false;
+	paused = true;
     }
 
 -- We need to access files in playlist/
