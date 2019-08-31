@@ -492,16 +492,15 @@ if count==27 then
   end		
   if count==23 then
 gl.clear(0,0,0,1)		
---playlist:stop()		
-video2:stop()
-video3:start()		
-video3:draw(0, 0, WIDTH, HEIGHT)
 		
---playlist2.tickq(os.time())
---gl.clear(0,0,0,1)		
-    --font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
-   --countStr = tostring(count)
-   --font2:write(250, 300, countStr, 64, 1,1,1,1)		
+--video2:stop()
+--video3:start()		
+--video3:draw(0, 0, WIDTH, HEIGHT)
+		
+		
+   font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
+  countStr = tostring(screen_rot)
+   font2:write(250, 300, countStr, 64, 1,1,1,1)		
   end
 if count==25 then
 --gl.clear(0,0,0,1)		
