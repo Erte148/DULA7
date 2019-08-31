@@ -12,21 +12,22 @@ util.data_mapper{
     end,
 }
 
-local video2 =util.videoplayer(
-	"Gold.mp4",
-{
-loop=true,
-paused=true,
+--local video2 =util.videoplayer(
+--	"Gold.mp4",
+--{
+--loop=true,
+--paused=true,
 --audio=true		
- }
-)
+-- }
+--)
 
 
---local video2 = resource.load_video{
- --   file = "Gold.mp4";
- --   looped = true;
---    paused = true;
---    }
+local video2 = resource.load_video{
+ file = "Gold.mp4";
+  looped = true;
+  paused = true;
+audio=true;	
+   }
 
 
 --local video3 = resource.load_video{
