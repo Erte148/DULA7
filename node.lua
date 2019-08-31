@@ -12,7 +12,14 @@ util.data_mapper{
 }
 
 
-
+local video2 = resource.load_video{
+    file = "Rose.mp4";
+    looped = true;
+    }
+local video3 = resource.load_video{
+    file = "Blue.mp4";
+    looped = true;
+    }
 
 -- We need to access files in playlist/
 node.make_nested()
@@ -437,16 +444,12 @@ end)
 function node.render()
  if count==0 then  
 gl.clear(0,0,0,1)		
-playlist3.tickqw(os.time())
+playlist.tick(os.time())
   end 
 	
 if count==18 then
 
 
-local video2 = resource.load_video{
-    file = "playlist/Rose.mp4";
-    looped = true;
-    }
 video2:draw(0, 0, WIDTH, HEIGHT)
  
   end
@@ -455,18 +458,8 @@ if count==27 then
 --playlist2.tickq(os.time())
   end		
   if count==23 then
-
-local item = config.playlist3[2]
-items[#items+1] = {
-file = resource.open_file('playlist/' .. item.file.asset_name),
-  type = item.file.type,
- duration = item.duration,
-  }		
- playlist3.set(prepare_playlist(items))
-node.gc()
-gl.clear(0,0,0,1)		
-playlist3.tickqw(os.time())		
- node.gc()		
+video3:draw(0, 0, WIDTH, HEIGHT)
+		
 --playlist2.tickq(os.time())
 --gl.clear(0,0,0,1)		
     --font2:write(30, 10, "GPIO Detected", 100, .5,.5,.5,1)
