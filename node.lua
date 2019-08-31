@@ -17,9 +17,12 @@ util.data_mapper{
 local video2 = resource.load_video{
     file = "Gold.mp4";
     looped = true;
-	paused = true;
+    paused = true;
+	raw=true;
 	
     }
+video2:rotate(180)
+
 local video3 = resource.load_video{
     file = "Blue.mp4";
     looped = true;
@@ -473,8 +476,7 @@ if count==27 then
 gl.clear(0,0,0,1)		
 --playlist:stop()		
 video2:stop()
-video3:start()
-gl.rotate(180, 0, 0, 1)		
+video3:start()		
 video3:draw(0, 0, WIDTH, HEIGHT)
 		
 --playlist2.tickq(os.time())
