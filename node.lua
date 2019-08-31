@@ -454,7 +454,7 @@ end)
 function node.render()
  if count==0 then  
 gl.clear(0,0,0,1)
-gl.rotate (-180, 0, 0, 1)		
+gl.rotate (-180, 960, 500, 0)		
 		
 --playlist:start()			
 video2:stop()
