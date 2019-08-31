@@ -474,7 +474,8 @@ gl.clear(0,0,0,1)
 		
 --playlist:start()			
 video2:stop()
-video3:stop()		
+video3:stop()
+playlist:set(2)		
 playlist.tick(os.time())
   end 
 	
