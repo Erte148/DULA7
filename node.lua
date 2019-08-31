@@ -18,6 +18,7 @@ local video3 = resource.load_video{
     looped = true;
 	paused = true;
     }
+video3:rotate(180)
 
 -- We need to access files in playlist/
 node.make_nested()
