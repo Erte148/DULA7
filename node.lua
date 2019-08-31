@@ -15,8 +15,8 @@ util.data_mapper{
 local video2 =util.videoplayer(
 	"Gold.mp4",
 {
-loop,
-paused		
+loop=true,
+paused=true		
  }
 )
 
