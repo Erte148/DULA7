@@ -1,4 +1,4 @@
-gl.setup(1920, 1080)
+gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 local font2 = resource.load_font "font2.ttf"
 local count = 0
@@ -28,15 +28,6 @@ local PREPARE_TIME = 1 -- seconds
 -- be enough.
 local VIDEO_PRELOAD_TIME = .5 -- seconds
 
-local font2 = resource.load_font "font2.ttf"
-local count = 0
-local num=0
-
-util.data_mapper{
-    counter = function(counter)
-        count = tonumber(counter)
-    end,
-}
 
 local json = require "json"
 local font = resource.load_font "silkscreen.ttf"
@@ -72,9 +63,16 @@ local function Screen()
         util.draw_correct(obj, 0, 0, content_w, content_h)
     end
 
+    local function drawq(obj)
+        --gl.rotate(-screen_rot, 0, 0, 1)
+        --gl.translate(-screen_x, -screen_y)
+        util.draw_correct(obj, 0, 0, NATIVE_WIDTH, NATIVE_HEIGHT)
+    end
+    
     return {
         update = update;
         draw = draw;
+        drawq= drawq;
     }
 end
 
@@ -90,6 +88,10 @@ local Image = {
     tick = function(self, now)
         local state, w, h = self.obj:state()
         screen.draw(self.obj)
+    end;
+    tickq = function(self, now)
+        local state, w, h = self.obj:state()
+        screen.drawq(self.obj)
     end;
     stop = function(self)
         if self.obj then
@@ -134,6 +136,24 @@ local Video = {
             screen.draw(self.obj)
         end
     end;
+    
+    tickq = function(self, now)
+        if not self.obj then
+            self.obj = resource.load_video{
+                file = self.file:copy();
+                paused = true;
+		looped = true;		
+            }
+        end       
+
+        self.obj:start()
+        local state, w, h = self.obj:state()
+	screen.drawq(self.obj)	 
+        
+    
+     end;
+    
+    
     stop = function(self)
         if self.obj then
             self.obj:dispose()
@@ -203,6 +223,37 @@ local function Playlist()
             msg("[%s] waiting for sync %.1f", serial, wait)
         end
     end
+    
+    
+     local function tickq(now)
+        local num_running = 0
+        local next_running = 99999999999999
+
+        
+
+       	for idx = 1, #items do
+            local item = items[idx]
+           
+                item.state = "running"
+          
+
+            
+
+            if item.state == "running" then
+                item:tickq(now)
+                num_running = num_running + 1
+            end
+	end
+			
+        
+
+        if num_running == 0 then
+            local wait = next_running - now
+            msg("[%s] waiting for sync %.1f", serial, wait)
+        end
+    end
+    
+    
 
     local function stop_all()
         for idx = 1, #items do
@@ -240,10 +291,12 @@ local function Playlist()
     return {
         set = set;
         tick = tick;
+        tickq = tickq;	
     }
 end
 
 local playlist = Playlist()
+local playlist2 = Playlist()
 
 local function prepare_playlist(playlist)
     if #playlist >= 2 then
@@ -290,8 +343,27 @@ util.file_watch("playlist/config.json", function(raw)
     node.gc()
 end)
 
+util.file_watch("playlist/config.json", function(raw)
+    local config = json.decode(raw)
+    local items = {}
+    for idx = 1, #config.playlist2 do
+            --idx = idp
+        local item = config.playlist2[idx]
+        items[#items+1] = {
+            file = resource.open_file('playlist/' .. item.file.asset_name),
+            type = item.file.type,
+            duration = item.duration,
+        }
+       
+    end
+    playlist2.set(prepare_playlist(items))
+    node.gc()
+end)
+
 function node.render()
-  if count==18 then  num=count
+  if count==18 then  
+        gl.clear(0,0,0,1)
+        playlist2.tickq(os.time())
   elseif count==17 then  num=count
   elseif count==27 then  num=count  
   elseif count==23 then  num=count
