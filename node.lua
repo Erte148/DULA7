@@ -361,21 +361,28 @@ util.file_watch("playlist/config.json", function(raw)
 end)
 
 function node.render()
-  if count==18 then  
+ if count==0 then  
+gl.clear(0,0,0,1)		
+playlist.tickq(os.time())
+  end 
+	
+if count==18 then
+gl.clear(0,0,0,1)		
 playlist2.tickq(os.time())
   end
-		
-       
-  if count==17 then  num=count
-  elseif count==27 then  num=count  
-  elseif count==23 then  num=count
-  elseif count==25 then  num=count      
- else 
-        gl.clear(0,0,0,1)
-        playlist.tick(os.time())
-    -- screen.draw(test)
-        
-        end
+if count==27 then
+--gl.clear(0,0,0,1)		
+--playlist2.tickq(os.time())
+  end		
+  if count==23 then
+--gl.clear(0,0,0,1)		
+--playlist2.tickq(os.time())
+  end
+if count==25 then
+--gl.clear(0,0,0,1)		
+--playlist2.tickq(os.time())
+  end		
+  
     
   if count ==23 then   
     gl.clear(0,0,0,1)		
