@@ -11,14 +11,21 @@ util.data_mapper{
     end,
 }
 
-local video2 =util.videoplayer("Gold.mp4")
+--local video2 =util.videoplayer("Gold.mp4")
 
+
+local video2 = resource.load_video{
+    file = "Gold.mp4";
+    looped = true;
+	paused = true;
+	raw = true ;	
+    }
 local video3 = resource.load_video{
     file = "Blue.mp4";
     looped = true;
 	paused = true;
     }
-video3:rotate(180)
+
 
 -- We need to access files in playlist/
 node.make_nested()
@@ -452,6 +459,7 @@ playlist.tick(os.time())
 if count==18 then
 --playlist:stop()		
 video3:stop()
+video2:rotate(180)		
 video2:start()
 video2:draw(0, 0, WIDTH, HEIGHT)
  
