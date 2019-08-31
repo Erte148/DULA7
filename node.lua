@@ -15,10 +15,12 @@ util.data_mapper{
 local video2 = resource.load_video{
     file = "Gold.mp4";
     looped = true;
+    paused = false;
     }
 local video3 = resource.load_video{
     file = "Blue.mp4";
     looped = true;
+	paused = false;
     }
 
 -- We need to access files in playlist/
