@@ -14,10 +14,10 @@ util.data_mapper{
 
 local video2 =util.videoplayer(
 	"Gold.mp4",
-
+{
 loop,
 paused		
-
+ }
 )
 
 
@@ -25,9 +25,7 @@ paused
  --   file = "Gold.mp4";
  --   looped = true;
 --    paused = true;
-	
-	
-    }
+--    }
 
 
 local video3 = resource.load_video{
