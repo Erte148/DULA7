@@ -26,7 +26,7 @@ local video2 = resource.load_video{
  file = "Gold.mp4";
   looped = true;
   paused = true;
---audio=true;	
+audio=true;	
    }
 
 
@@ -34,7 +34,7 @@ local video3 = resource.load_video{
    file = "Blue.mp4";
     looped = true;
     paused = true;
-   -- audio=true;	
+    audio=true;	
    }
 
 --local video3 =util.videoplayer(
