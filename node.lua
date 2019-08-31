@@ -18,7 +18,7 @@ local video2 = resource.load_video{
     file = "Gold.mp4";
     looped = true;
 	paused = true;
-	raw = true ;	
+	
     }
 local video3 = resource.load_video{
     file = "Blue.mp4";
@@ -457,18 +457,20 @@ playlist.tick(os.time())
   end 
 	
 if count==18 then
---playlist:stop()		
-video3:stop()
-video2:rotate(180)		
+--playlist:stop()
+gl.clear(0,0,0,1)		
+video3:stop()	
 video2:start()
 video2:draw(0, 0, WIDTH, HEIGHT)
  
   end
 if count==27 then
+		
 --gl.clear(0,0,0,1)		
 --playlist2.tickq(os.time())
   end		
   if count==23 then
+gl.clear(0,0,0,1)		
 --playlist:stop()		
 video2:stop()
 video3:start()
