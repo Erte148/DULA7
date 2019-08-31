@@ -441,7 +441,7 @@ playlist.tickq(os.time())
   end 
 	
 if count==18 then
-playlist3.set(prepare_playlist(1))
+playlist3.set(1)
 node.gc()
 gl.clear(0,0,0,1)		
 playlist3.tickqw(os.time())
@@ -452,7 +452,7 @@ if count==27 then
   end		
   if count==23 then
 
-playlist3.set(prepare_playlist(2))
+playlist3.set(2)
 node.gc()
 gl.clear(0,0,0,1)		
 playlist3.tickqw(os.time())		
