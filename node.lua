@@ -445,7 +445,9 @@ end)
 
 function node.render()
  if count==0 then  
-gl.clear(0,0,0,1)		
+gl.clear(0,0,0,1)
+video2:stop()
+video3:stop()		
 playlist.tick(os.time())
   end 
 	
