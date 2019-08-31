@@ -361,7 +361,7 @@ util.file_watch("playlist/config.json", function(raw)
 end)
 
 function node.render()
-  if count==18 then  num=count
+  if count==18 then  playlist2.tickq(os.time())
        
   elseif count==17 then  num=count
   elseif count==27 then  num=count  
