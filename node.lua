@@ -28,11 +28,19 @@ paused=true
 --    }
 
 
-local video3 = resource.load_video{
-    file = "Blue.mp4";
-    looped = true;
-	paused = true;
-    }
+--local video3 = resource.load_video{
+--    file = "Blue.mp4";
+--    looped = true;
+--	paused = true;
+  --  }
+
+local video32 =util.videoplayer(
+	"Blue.mp4",
+{
+loop=true,
+paused=true		
+ }
+)
 
 
 -- We need to access files in playlist/
